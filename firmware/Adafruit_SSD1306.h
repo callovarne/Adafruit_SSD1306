@@ -16,25 +16,7 @@ BSD license, check license.txt for more information
 All text above, and the splash screen must be included in any redistribution
 *********************************************************************/
 
-#if ARDUINO >= 100
- #include "Arduino.h"
- #define WIRE_WRITE Wire.write
-#else
- #include "WProgram.h"
-  #define WIRE_WRITE Wire.send
-#endif
-
-#if defined(__SAM3X8E__)
- typedef volatile RwReg PortReg;
- typedef uint32_t PortMask;
-#elif defined(ARDUINO_ARCH_SAMD)
-// not supported
-#else
-  typedef volatile uint8_t PortReg;
-  typedef uint8_t PortMask;
-#endif
-
-#include <SPI.h>
+#include "application.h"
 #include <Adafruit_GFX.h>
 
 #define BLACK 0
