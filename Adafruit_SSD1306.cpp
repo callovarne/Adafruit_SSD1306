@@ -16,22 +16,6 @@ BSD license, check license.txt for more information
 All text above, and the splash screen below must be included in any redistribution
 *********************************************************************/
 
-#ifdef __AVR__
-  #include <avr/pgmspace.h>
-#elif defined(ESP8266)
- #include <pgmspace.h>
-#else
- #define pgm_read_byte(addr) (*(const unsigned char *)(addr))
-#endif
-
-#if !defined(ARDUINO_ARCH_SAM) && !defined(ARDUINO_ARCH_SAMD) && !defined(ESP8266) && !defined(ARDUINO_ARCH_STM32F2)
- #include <util/delay.h>
-#endif
-
-#include <stdlib.h>
-
-#include <Wire.h>
-#include <SPI.h>
 #include "Adafruit_GFX.h"
 #include "Adafruit_SSD1306.h"
 
